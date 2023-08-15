@@ -102,9 +102,32 @@ drawPeople()
 console.log(people)
 }
 
+function attackBank() {
+people.forEach((person) => {
+    if(person.location == '🏦') {
+        person.picture = '🦇'
+    }
+})
+drawPeople()
+}
 
+function attackStadium(){
+    people.forEach((person) => {
+        if(person.location == '🏟️'){
+            person.picture = '🦇'
+        }
+    })
+drawPeople()
+}
 
-
+function attackCircus() {
+    people.forEach((person) => {
+        if(person.location = '🎪') {
+            person.picture = '🦇'
+        }
+    })
+    drawPeople()
+}
 
 
 
