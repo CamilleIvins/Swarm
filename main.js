@@ -1,5 +1,7 @@
+console.log('Dusk descends 🌇')
+
 const locations = [
-    '🏤', '🏥', '🏭', '🏢', '🏣'
+    '🏤', '🏥', '🏢', '🏨', '🏟️', '💒', '⛽', '🎪', '🏦'
 ]
 
 const people = [{
@@ -35,17 +37,17 @@ const people = [{
 {
     name: 'Marie',
     picture: '👩‍🍳',
-    location: '🏭',
+    location: '🏦',
 },
 {
     name: 'Mykeal',
     picture: '💂',
-    location: '🏭',
+    location: '🏟️',
 },
 {
     name: 'Phil',
     picture: '🧜‍♂️',
-    location: '🏭',
+    location: '🏟️',
 },
 {
     name: 'Wilson',
@@ -55,7 +57,7 @@ const people = [{
 {
     name: 'Wendy',
     picture: '👩‍⚕️',
-    location: '🏢',
+    location: '⛽',
 },
 {
     name: 'Jeremy',
@@ -63,3 +65,30 @@ const people = [{
     location: '🏢',
 }
 ]
+
+// for (let i = 0; i < people.length; i++) {
+//     let person = people[i]
+//     console.log(people[i].name)
+// }
+
+
+function drawPeople() {
+    locations.forEach((area) => {
+        console.log(area)
+        let inLocation = people.filter((person) => person.location == area)
+        let personEmoji = inLocation.map((person) => person.picture + person.name)
+        console.log(personEmoji)
+        document.getElementById(area).innerText = personEmoji.join(', ')
+    })
+}
+
+people.forEach((person) => { console.log(person.location) })
+
+function attack() {
+    let inLocation = people.filter((person) => person.location == area)
+    let victim = inLocation.find(person => person.picture != '🦇')
+}
+
+
+
+drawPeople()

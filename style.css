@@ -13,3 +13,9 @@ body.debug [class*="col-"] {
     outline: 2px dotted forestgreen;
     outline-offset: -3px;
 }
+
+
+button {
+    font-family: 'Laila', sans-serif;
+    height: 20vh;
+}
