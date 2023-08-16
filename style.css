@@ -14,8 +14,20 @@ body.debug [class*="col-"] {
     outline-offset: -3px;
 }
 
+body {
+    background-color: rgb(21, 13, 45);
+    font-size: larger;
+}
 
 button {
     font-family: 'Laila', sans-serif;
     height: 20vh;
+    border-radius: 8px;
+    background-color: rgba(215, 74, 46, 0.674);
+    color: aliceblue;
+}
+
+.text-special {
+    font-family: 'Vollkorn', serif;
+    color: aliceblue;
 }

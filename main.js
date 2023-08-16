@@ -84,7 +84,7 @@ function drawPeople() {
 
 // people.forEach((person) => { console.log(person.location) })
 
-
+// *SECTION - start section for working buttons
 
 function attackGasStation() {
     // find all the people at the gas station
@@ -161,22 +161,53 @@ function attackHospital () {
     drawPeople()
     checkForSwarm()
 }
+function attackHotel () {
+    people.forEach((person) => {
+        if(person.location == '🏨'){
+            person.picture = '🦇'
+        }
+    })
+    drawPeople()
+    checkForSwarm()
+}
 
 function attackWeddingHall (){
     let happlessPeople = people.filter(person => person.location == '💒')
     happlessPeople.map(person => person.picture = '🦇')
     drawPeople()
     checkForSwarm()   
-     flee()
 }
+// *SECTION - end working code for individual buttons
+
 
 function checkForSwarm () {
     let swarm = people.filter(person => person.picture == '🦇')
     if(swarm.length == people.length) {
         window.alert('*click click click*')
     }
-
+    
+    flee()
 }
+
+function tillDaybreak (
+    forEach.checkForSwarm
+)
+
+// function attack(){
+// locations.forEach((area) => {
+//     // let target = locations.filter(area => '')
+//     let target = locations['']
+//     // for (let i=0; i<locations.length; i++)
+//     // if(target){
+//     people.forEach((person) => {
+//                 if(person.location == target){
+//                     person.picture = '🦇'}
+//     }
+//     )})
+// drawPeople()
+// checkForSwarm()
+// flee()
+// }
 
 function flee() {
     people.forEach(person => {
