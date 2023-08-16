@@ -99,6 +99,7 @@ people.forEach((person) => {
     }
 })
 drawPeople()
+checkForSwarm()
 console.log(people)
 }
 
@@ -109,6 +110,7 @@ people.forEach((person) => {
     }
 })
 drawPeople()
+checkForSwarm()
 }
 
 function attackStadium(){
@@ -118,20 +120,77 @@ function attackStadium(){
         }
     })
 drawPeople()
+checkForSwarm()
 }
 
 function attackCircus() {
     people.forEach((person) => {
-        if(person.location = '🎪') {
+        if(person.location == '🎪') {
             person.picture = '🦇'
         }
     })
     drawPeople()
+    checkForSwarm()
 }
 
+function attackPostOffice(){
+    people.forEach((person) => {
+        if(person.location == '🏤'){
+            person.picture = '🦇'}
+        })
+        drawPeople()
+        checkForSwarm()
+    }
+    
+function attackOffice (){
+    people.forEach((person) => {
+        if(person.location == '🏢'){
+            person.picture = '🦇'
+    }
+})
+drawPeople()
+checkForSwarm()
+}
 
+function attackHospital () {
+    people.forEach((person) => {
+        if(person.location == '🏥'){
+            person.picture = '🦇'
+        }
+    })
+    drawPeople()
+    checkForSwarm()
+}
 
+function attackWeddingHall (){
+    let happlessPeople = people.filter(person => person.location == '💒')
+    happlessPeople.map(person => person.picture = '🦇')
+    drawPeople()
+    checkForSwarm()   
+     flee()
+}
 
+function checkForSwarm () {
+    let swarm = people.filter(person => person.picture == '🦇')
+    if(swarm.length == people.length) {
+        window.alert('*click click click*')
+    }
+
+}
+
+function flee() {
+    people.forEach(person => {
+    let flee = Math.floor(Math.random() * locations.length)
+    console.log(flee)
+    let scatter = locations[flee]
+   
+ person.location = scatter
+    })
+
+    // people.forEach((person) => person.location == flee){
+        drawPeople()
+    
+}
 // This is the one that also works
 // function attackGasStation() {
 //     let peopleAtLocation = people.filter(person => person.location == '⛽')
